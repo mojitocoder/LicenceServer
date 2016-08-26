@@ -14,10 +14,14 @@ namespace Server
             Console.WriteLine("Hello world");
 
             AsymmetricAlgoService asymmService = new AsymmetricAlgoService();
-            string cipherText = asymmService.GetCipherText("Hello");
-            Console.WriteLine("Encrypted: "+  cipherText);
-            string original = asymmService.DecryptCipherText(cipherText);
-            Console.WriteLine("Original: " + original);
+
+            for (int i = 0; i < 10; i++)
+            {
+                string cipherText = asymmService.GetCipherText("Hello");
+                Console.WriteLine("Encrypted: " + cipherText);
+                string original = asymmService.DecryptCipherText(cipherText);
+                Console.WriteLine("Original: " + original);
+            }
 
             Console.ReadLine();
         }

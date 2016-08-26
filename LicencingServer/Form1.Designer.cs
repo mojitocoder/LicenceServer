@@ -29,33 +29,35 @@
         private void InitializeComponent()
         {
             this.btnActivate = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtActivationCode = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtAuthentication = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtMac = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnActivate
             // 
-            this.btnActivate.Location = new System.Drawing.Point(129, 153);
+            this.btnActivate.Location = new System.Drawing.Point(130, 178);
             this.btnActivate.Name = "btnActivate";
             this.btnActivate.Size = new System.Drawing.Size(166, 23);
             this.btnActivate.TabIndex = 12;
             this.btnActivate.Text = "Generate Activation Code";
             this.btnActivate.UseVisualStyleBackColor = true;
+            this.btnActivate.Click += new System.EventHandler(this.btnActivate_Click);
             // 
-            // textBox1
+            // txtActivationCode
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(128, 114);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(379, 20);
-            this.textBox1.TabIndex = 11;
+            this.txtActivationCode.Location = new System.Drawing.Point(129, 139);
+            this.txtActivationCode.Name = "txtActivationCode";
+            this.txtActivationCode.Size = new System.Drawing.Size(379, 20);
+            this.txtActivationCode.TabIndex = 11;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 117);
+            this.label2.Location = new System.Drawing.Point(22, 142);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 13);
             this.label2.TabIndex = 10;
@@ -78,18 +80,38 @@
             this.txtAuthentication.Size = new System.Drawing.Size(379, 70);
             this.txtAuthentication.TabIndex = 8;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(22, 109);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 13);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Client\'s MAC";
+            // 
+            // txtMac
+            // 
+            this.txtMac.Location = new System.Drawing.Point(129, 109);
+            this.txtMac.Name = "txtMac";
+            this.txtMac.Size = new System.Drawing.Size(379, 20);
+            this.txtMac.TabIndex = 14;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(546, 432);
+            this.ClientSize = new System.Drawing.Size(546, 224);
+            this.Controls.Add(this.txtMac);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnActivate);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtActivationCode);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtAuthentication);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form1";
             this.Text = "Licencing Server";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -97,10 +119,12 @@
 
         #endregion
         private System.Windows.Forms.Button btnActivate;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtActivationCode;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtAuthentication;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtMac;
     }
 }
 

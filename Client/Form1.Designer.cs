@@ -31,7 +31,7 @@
             this.txtAuthentication = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtActivationCode = new System.Windows.Forms.TextBox();
             this.btnActivate = new System.Windows.Forms.Button();
             this.btnExtract = new System.Windows.Forms.Button();
             this.btnDeactivate = new System.Windows.Forms.Button();
@@ -39,11 +39,11 @@
             // 
             // txtAuthentication
             // 
-            this.txtAuthentication.Enabled = false;
             this.txtAuthentication.Location = new System.Drawing.Point(124, 21);
             this.txtAuthentication.Multiline = true;
             this.txtAuthentication.Name = "txtAuthentication";
-            this.txtAuthentication.Size = new System.Drawing.Size(379, 70);
+            this.txtAuthentication.ReadOnly = true;
+            this.txtAuthentication.Size = new System.Drawing.Size(379, 100);
             this.txtAuthentication.TabIndex = 0;
             // 
             // label1
@@ -58,27 +58,28 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 113);
+            this.label2.Location = new System.Drawing.Point(17, 144);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Activation code";
             // 
-            // textBox1
+            // txtActivationCode
             // 
-            this.textBox1.Location = new System.Drawing.Point(123, 110);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(379, 20);
-            this.textBox1.TabIndex = 3;
+            this.txtActivationCode.Location = new System.Drawing.Point(124, 141);
+            this.txtActivationCode.Name = "txtActivationCode";
+            this.txtActivationCode.Size = new System.Drawing.Size(379, 20);
+            this.txtActivationCode.TabIndex = 3;
             // 
             // btnActivate
             // 
-            this.btnActivate.Location = new System.Drawing.Point(124, 149);
+            this.btnActivate.Location = new System.Drawing.Point(125, 180);
             this.btnActivate.Name = "btnActivate";
             this.btnActivate.Size = new System.Drawing.Size(75, 23);
             this.btnActivate.TabIndex = 4;
             this.btnActivate.Text = "Activate";
             this.btnActivate.UseVisualStyleBackColor = true;
+            this.btnActivate.Click += new System.EventHandler(this.btnActivate_Click);
             // 
             // btnExtract
             // 
@@ -89,15 +90,17 @@
             this.btnExtract.TabIndex = 6;
             this.btnExtract.Text = "Extract";
             this.btnExtract.UseVisualStyleBackColor = false;
+            this.btnExtract.Click += new System.EventHandler(this.btnExtract_Click);
             // 
             // btnDeactivate
             // 
-            this.btnDeactivate.Location = new System.Drawing.Point(427, 149);
+            this.btnDeactivate.Location = new System.Drawing.Point(428, 180);
             this.btnDeactivate.Name = "btnDeactivate";
             this.btnDeactivate.Size = new System.Drawing.Size(75, 23);
             this.btnDeactivate.TabIndex = 7;
             this.btnDeactivate.Text = "Deactivate";
             this.btnDeactivate.UseVisualStyleBackColor = true;
+            this.btnDeactivate.Click += new System.EventHandler(this.btnDeactivate_Click);
             // 
             // Placeholder
             // 
@@ -107,13 +110,14 @@
             this.Controls.Add(this.btnDeactivate);
             this.Controls.Add(this.btnExtract);
             this.Controls.Add(this.btnActivate);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtActivationCode);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtAuthentication);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Placeholder";
             this.Text = "Placeholder";
+            this.Load += new System.EventHandler(this.Placeholder_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,7 +128,7 @@
         private System.Windows.Forms.TextBox txtAuthentication;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtActivationCode;
         private System.Windows.Forms.Button btnActivate;
         private System.Windows.Forms.Button btnExtract;
         private System.Windows.Forms.Button btnDeactivate;
